@@ -37,7 +37,9 @@ class FooeyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Fooey::create($this->validateFooey($request));
+
+        return redirect(route('fooeys.index'));
     }
 
     /**
@@ -83,5 +85,14 @@ class FooeyController extends Controller
     public function destroy(Fooey $fooey)
     {
         //
+    }
+
+    public function validateFooey(Request $request)
+    {
+        return $request->validate([
+            'title' => 'required',
+            'excerpt' => 'required',
+            'body' => 'required'
+        ]);
     }
 }

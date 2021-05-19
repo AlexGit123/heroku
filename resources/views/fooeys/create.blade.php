@@ -1,10 +1,7 @@
-
-
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <div>
         <div>
-            <h1>New Article</h1>
+            <h1>Create a new fooey</h1>
 
             <form method="POST" action="/fooeys">
                 @csrf
