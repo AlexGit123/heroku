@@ -15,6 +15,9 @@ class CreateFooeysTable extends Migration
     {
         Schema::create('fooeys', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->text('excerpt');
+            $table->text('body');
             $table->timestamps();
         });
     }

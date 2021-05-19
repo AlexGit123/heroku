@@ -24,4 +24,4 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::resource('/fooey', FooeyController::class);
+Route::resource('/fooeys', FooeyController::class);

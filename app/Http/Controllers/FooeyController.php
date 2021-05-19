@@ -14,7 +14,9 @@ class FooeyController extends Controller
      */
     public function index()
     {
-        return view('fooey');
+        $fooeys = Fooey::take(3)->get();
+
+        return view('fooeys.index', ['fooeys' => $fooeys]);
     }
 
     /**
@@ -24,7 +26,7 @@ class FooeyController extends Controller
      */
     public function create()
     {
-        //
+        return view('fooeys.create');
     }
 
     /**
@@ -46,8 +48,7 @@ class FooeyController extends Controller
      */
     public function show(Fooey $fooey)
     {
-        return view('fooey', compact('fooey'));
-
+        return view('fooeys.show', ['fooey' => $fooey]);
     }
 
     /**
