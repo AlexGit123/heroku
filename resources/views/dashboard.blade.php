@@ -4,9 +4,9 @@
             {{ __('Dashboard') }}
         </h2>
 
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ route('views.welcome') }}
-        </h2>
+        <h2>Home</h2>
+
+        <h2>Fooey</h2>
     </x-slot>
 
     <div class="py-12">
