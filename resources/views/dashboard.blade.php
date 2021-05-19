@@ -13,11 +13,11 @@
                 </div>
 
                 <div class="p-6 bg-white border-b border-gray-200">
-                    Visit the Home Page
+                    <a href="/"> Visit the Home Page</a>
                 </div>
 
                 <div class="p-6 bg-white border-b border-gray-200">
-                    Create a Fooey
+                    <a href="{{route('fooeys.create')}}"> Visit the Home Page</a>
                 </div>
             </div>
         </div>
