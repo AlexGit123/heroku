@@ -17,7 +17,7 @@
                 </div>
 
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <a href="{{route('fooeys.create')}}"> Visit the Home Page</a>
+                    <a href="{{route('fooeys.create')}}">Create a Fooey!</a>
                 </div>
             </div>
         </div>
