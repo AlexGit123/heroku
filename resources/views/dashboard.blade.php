@@ -12,11 +12,11 @@
                     You're logged in!
                 </div>
 
-                <div>
+                <div class="p-6 bg-white border-b border-gray-200">
                     Visit the Home Page
                 </div>
 
-                <div>
+                <div class="p-6 bg-white border-b border-gray-200">
                     Create a Fooey
                 </div>
             </div>
