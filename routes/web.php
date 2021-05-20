@@ -24,4 +24,4 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::resource('/fooeys', FooeyController::class);
+Route::resource('/fooeys', FooeyController::class)->middleware(['auth']);
