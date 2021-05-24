@@ -28,4 +28,4 @@ Route::resource('/fooeys', FooeyController::class)->middleware(['auth']);
 
 Route::get('/password-management', function () {
     return view('passwordmanager');
-});
+})->middleware(['auth']);
