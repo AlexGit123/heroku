@@ -19,6 +19,10 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     <a href="{{route('fooeys.create')}}">Create a Fooey!</a>
                 </div>
+
+                <div class="p-6 bg-white border-b border-gray-200">
+                    <a href="/password-management">The Importance of Password Management</a>
+                </div>
             </div>
         </div>
     </div>

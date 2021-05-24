@@ -25,3 +25,7 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 Route::resource('/fooeys', FooeyController::class)->middleware(['auth']);
+
+Route::get('/password-management', function () {
+    return view('passwordmanager');
+});
