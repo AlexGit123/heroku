@@ -17,15 +17,16 @@
 
     <div>
         <div>
-            <h1>Create a new fooey</h1>
+            <h1 style="font-size: 110%; text-align: center">Create a new fooey</h1>
+            <h2 style="color: red; padding-top: 2%; padding-left: 1%">Fields with an * are required</h2>
 
             <form method="POST" action="/fooeys">
                 @csrf
 
-                <div>
+                <div style="padding-left: 1%">
                     <label class="field" for="">Fooey Title</label>
 
-                    <div class="">
+                    <div style="padding-right: 50%">
                         <input class="input @error('title') is-danger @enderror"
                                type="text"
                                name="title"
@@ -39,11 +40,11 @@
                 </div>
 
 
-                <div class="">
+                <div style="padding-left: 1%; padding-top: 5%" class="">
                     <label class="" for="excerpt">Fooey Excerpt</label>
 
 
-                    <div class="field">
+                    <div style="padding-right: 50%" class="field">
                     <textarea class="textarea @error('excerpt') is-danger @enderror"
                               name="excerpt"
                               id="excerpt"> {{old('excerpt')}} </textarea>
@@ -56,16 +57,16 @@
                 </div>
 
 
-                <div>
+                <div style="padding-top: 5%; padding-left: 1%">
                     <label class="" for="body">Fooey Body</label>
 
-                    <div>
+                    <div style="padding-right: 50%">
                     <textarea class="textarea @error('body') is-danger @enderror"
                               name="body"
                               id="body"> {{old('body')}} </textarea>
 
-                        @error('excerpt')
-                        <p class="help is-danger">{{$errors->first('excerpt')}}</p>
+                        @error('body')
+                        <p class="help is-danger">{{$errors->first('body')}}</p>
                         @enderror
                     </div>
 
@@ -73,11 +74,9 @@
 
 
                 <div class="">
-
-                    <div>
+                    <div style="padding-top: 5%; padding-left: 5%">
                         <button class="button" style="background-color: lightblue;" type="submit">Submit</button>
                     </div>
-
                 </div>
 
             </form>

@@ -439,6 +439,7 @@ img {
 
 textarea {
   resize: vertical;
+  resize: hortizonal;
 }
 
 input::-moz-placeholder, textarea::-moz-placeholder {

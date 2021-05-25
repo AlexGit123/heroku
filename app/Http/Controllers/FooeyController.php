@@ -90,9 +90,9 @@ class FooeyController extends Controller
     public function validateFooey(Request $request)
     {
         return $request->validate([
-            'title' => 'required',
-            'excerpt' => 'required',
-            'body' => 'required'
+            'title' => 'required|max:3',
+            'excerpt' => 'required|min:15|max:30',
+            'body' => 'required|min:25|max:150'
         ]);
     }
 }
