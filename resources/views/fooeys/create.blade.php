@@ -43,7 +43,6 @@
                 <div style="padding-left: 1%; padding-top: 5%" class="">
                     <label class="" for="excerpt"><span style="color: red">*</span>Fooey Excerpt</label>
 
-
                     <div style="padding-right: 50%" class="field">
                     <textarea class="textarea @error('excerpt') is-danger @enderror"
                               name="excerpt"
@@ -55,7 +54,6 @@
                     </div>
 
                 </div>
-
 
                 <div style="padding-top: 5%; padding-left: 1%">
                     <label class="" for="body"><span style="color: red">*</span>Fooey Body</label>
@@ -75,18 +73,17 @@
                     <label class="field" for=""><span style="color: red">*</span>Email</label>
 
                     <div style="padding-right: 50%">
-                        <input class="input @error('title') is-danger @enderror"
+                        <input class="input @error('email') is-danger @enderror"
                                type="text"
-                               name="title"
-                               id="title"
-                               value="{{old('title')}}">
+                               name="email"
+                               id="email"
+                               value="{{old('email')}}">
 
-                        @error('title')
-                        <p class="help is-danger">{{$errors->first('title')}}</p>
+                        @error('email')
+                        <p class="help is-danger">{{$errors->first('email')}}</p>
                         @enderror
                     </div>
                 </div>
-
 
                 <div class="">
                     <div style="padding-top: 5%; padding-left: 5%">
@@ -95,7 +92,6 @@
                 </div>
 
             </form>
-
         </div>
     </div>
 

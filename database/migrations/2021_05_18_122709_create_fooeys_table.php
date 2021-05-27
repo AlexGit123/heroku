@@ -18,6 +18,7 @@ class CreateFooeysTable extends Migration
             $table->string('title');
             $table->text('excerpt');
             $table->text('body');
+            $table->text('email');
             $table->timestamps();
         });
     }

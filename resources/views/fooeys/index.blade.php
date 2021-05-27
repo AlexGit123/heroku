@@ -25,6 +25,8 @@
         </h1>
 
         <p>{{$fooey->body}}</p>
+
+        <p>{{$fooey->email}}</p>
     </div>
 @endforeach
 
