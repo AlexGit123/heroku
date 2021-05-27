@@ -24,7 +24,7 @@
                 @csrf
 
                 <div style="padding-left: 1%">
-                    <label class="field" for="">Fooey Title</label>
+                    <label class="field" for=""><span style="color: red">*</span>Fooey Title</label>
 
                     <div style="padding-right: 50%">
                         <input class="input @error('title') is-danger @enderror"
@@ -41,7 +41,7 @@
 
 
                 <div style="padding-left: 1%; padding-top: 5%" class="">
-                    <label class="" for="excerpt">Fooey Excerpt</label>
+                    <label class="" for="excerpt"><span style="color: red">*</span>Fooey Excerpt</label>
 
 
                     <div style="padding-right: 50%" class="field">
@@ -58,7 +58,7 @@
 
 
                 <div style="padding-top: 5%; padding-left: 1%">
-                    <label class="" for="body">Fooey Body</label>
+                    <label class="" for="body"><span style="color: red">*</span>Fooey Body</label>
 
                     <div style="padding-right: 50%">
                     <textarea class="textarea @error('body') is-danger @enderror"
@@ -69,7 +69,22 @@
                         <p class="help is-danger">{{$errors->first('body')}}</p>
                         @enderror
                     </div>
+                </div>
 
+                <div style="padding-left: 1%; padding-top: 5%">
+                    <label class="field" for=""><span style="color: red">*</span>Email</label>
+
+                    <div style="padding-right: 50%">
+                        <input class="input @error('title') is-danger @enderror"
+                               type="text"
+                               name="title"
+                               id="title"
+                               value="{{old('title')}}">
+
+                        @error('title')
+                        <p class="help is-danger">{{$errors->first('title')}}</p>
+                        @enderror
+                    </div>
                 </div>
 
 
