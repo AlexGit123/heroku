@@ -36,7 +36,7 @@
                     @endauth
                 </div>
             @endif
-            <h1> Welcome to my Heroku/Laravel Project </h1>
+            <h1> Welcome to my Heroku/Laravel Project!!</h1>
         </div>
     </body>
 </html>
