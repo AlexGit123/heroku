@@ -35,6 +35,7 @@
                                 name="password"
                                 required autocomplete="new-password" />
             </div>
+                <p style="font-size: 80%">Consider using a password manager for stronger passwords!</p>
 
             <!-- Confirm Password -->
             <div class="mt-4">
