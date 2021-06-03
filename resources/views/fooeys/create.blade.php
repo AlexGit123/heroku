@@ -84,12 +84,20 @@
                     </div>
                 </div>
 
-                <div>
-                    <div style="padding-top: 3%;">
-                        <button class="button" style="background-color: lightblue;" type="submit">Submit</button>
+                <div style="display: flex; padding-top: 3%; justify-content: center">
+                    <div>
+                        <div>
+                            <button class="button" style="background-color: lightblue;" type="submit">Submit</button>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center">
+                        <div>
+                            <a href="{{route('fooeys.index')}}" class="button"
+                               style="background-color: lightblue">Back</a>
+                        </div>
                     </div>
                 </div>
-
             </form>
         </div>
     </div>

@@ -4,7 +4,9 @@
 @if (Route::has('login'))
     <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
         @auth
-            <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Dashboard</a>
+            <a style="padding: 2%" href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Dashboard</a>
+            <a style="padding: 2%" href="{{ url('/password-management') }}" class="text-sm text-gray-700 underline">Password Management</a>
+
         @else
             <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Log in</a>
 
@@ -15,11 +17,11 @@
     </div>
 @endif
 
-    <div>
-        <h1 style="text-align: center">Update a Fooey</h1>
-        <h2 style="color: red; padding-top: 2%; padding-left: 1%">Fields with an * are required</h2>
+<div>
+    <h1 style="text-align: center">Update a Fooey</h1>
+    <h2 style="color: red; padding-left: 1%">Fields with an * are required</h2>
 
-        <div style="text-align: center">
+    <div style="text-align: center">
         <form method="POST" action="/fooeys/{{$fooey->id}}">
             @csrf
             @method('PUT')
@@ -59,29 +61,47 @@
                     <p class="help is-danger">{{$errors->first('excerpt')}}</p>
                     @enderror
                 </div>
+            </div>
 
-                <div style="display: flex; padding-top: 3%; justify-content: center">
-                    <div style="text-align: center">
-                        <div>
-                            <button class="button" style="background-color: lightblue" type="submit">Save</button>
-                        </div>
-                    </div>
+            <div style="padding-left: 2%; padding-right: 2%; padding-top: 3%">
+                <label class="email" for="email"><span style="color: red">*</span>Email</label>
 
-                    <div style="text-align: center">
-                        <div>
-                            <a href="{{route('fooeys.index')}}" class="button" style="background-color: lightblue">Cancel</a>
-                        </div>
-                    </div>
+                <div>
+                    <input class="input @error('email') is-danger @enderror"
+                           type="text"
+                           name="email"
+                           id="email"
+                           value="{{$fooey->email}}">
 
-                    <form method="POST" action="/fooeys/{{ $fooey->id }}">
-                        @csrf
-                        @method('DELETE')
-                        <div style="text-align: center">
-                            <button class="button" style="background-color: lightblue;">Delete</button>
-                        </div>
-                    </form>
+                    @error('title')
+                    <p class="help is-danger">{{$errors->first('title')}}</p>
+                    @enderror
                 </div>
             </div>
+
+            <div style="display: flex; padding-top: 1%; justify-content: center">
+                <div style="text-align: center">
+                    <div>
+                        <a href="{{route('fooeys.update', $fooey)}}" class="button" style="background-color: lightblue">Save</a>
+                    </div>
+                </div>
+
+                <div style="text-align: center">
+                    <div>
+                        <a href="{{route('fooeys.index')}}" class="button"
+                           style="background-color: lightblue">Cancel</a>
+                    </div>
+                </div>
+
+                <form method="POST" action="/fooeys/{{ $fooey->id }}">
+                    @csrf
+                    @method('DELETE')
+                    <div style="text-align: center">
+                        <button class="button" style="background-color: lightblue;">Delete</button>
+                    </div>
+                </form>
+            </div>
+
         </form>
     </div>
 </div>
