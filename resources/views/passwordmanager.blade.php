@@ -4,8 +4,8 @@
 @if (Route::has('login'))
     <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
         @auth
-            <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Dashboard</a>
-            <a href="{{ route('fooeys.index') }}" class="text-sm text-gray-700 underline">Fooey</a>
+            <a style="padding: 2%;" href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Dashboard</a>
+            <a style="padding: 2%;" href="{{ route('fooeys.index') }}" class="text-sm text-gray-700 underline">Fooey</a>
         @else
             <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Log in</a>
 
@@ -33,5 +33,5 @@
 
 <div style="padding-left: 40%">
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-<lottie-player src="https://assets7.lottiefiles.com/packages/lf20_btjy92kr.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+<lottie-player src="https://assets7.lottiefiles.com/packages/lf20_btjy92kr.json"  background="transparent"  speed="5"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
 </div>

@@ -61,7 +61,7 @@ class FooeyController extends Controller
      */
     public function edit(Fooey $fooey)
     {
-        //
+        return view('fooeys.edit', ['fooey' => $fooey]);
     }
 
     /**
@@ -73,7 +73,9 @@ class FooeyController extends Controller
      */
     public function update(Request $request, Fooey $fooey)
     {
-        //
+        $fooey->update($this->validateFooey($request));
+
+        return redirect(route('fooeys.show', $fooey));
     }
 
     /**
@@ -84,7 +86,12 @@ class FooeyController extends Controller
      */
     public function destroy(Fooey $fooey)
     {
-        //
+
+        $fooey = Fooey::find($fooey->id);
+
+        $fooey->delete();
+
+        return redirect(route('fooeys.index', $fooey));
     }
 
     public function validateFooey(Request $request)

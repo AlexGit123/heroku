@@ -15,18 +15,19 @@
     </div>
 @endif
 
+<div>
     <div>
-        <div>
-            <h1 style="font-size: 110%; text-align: center">Create a new fooey</h1>
-            <h2 style="color: red; padding-top: 2%; padding-left: 1%">Fields with an * are required</h2>
+        <h1 style="font-size: 110%; text-align: center">Create a new fooey</h1>
+        <h2 style="color: red; padding-top: 2%; padding-left: 1%">Fields with an * are required</h2>
 
+        <div style="text-align: center">
             <form method="POST" action="/fooeys">
                 @csrf
 
-                <div style="padding-left: 1%">
-                    <label class="field" for=""><span style="color: red">*</span>Fooey Title</label>
+                <div style="padding-left: 2%; padding-right: 2%">
+                    <label class="title" for="title"><span style="color: red">*</span>Fooey Title</label>
 
-                    <div style="padding-right: 50%">
+                    <div>
                         <input class="input @error('title') is-danger @enderror"
                                type="text"
                                name="title"
@@ -40,10 +41,9 @@
                 </div>
 
 
-                <div style="padding-left: 1%; padding-top: 5%" class="">
-                    <label class="" for="excerpt"><span style="color: red">*</span>Fooey Excerpt</label>
-
-                    <div style="padding-right: 50%" class="field">
+                <div style="padding-left: 2%; padding-right: 2%; padding-top: 3%">
+                    <label class="excerpt" for="excerpt"><span style="color: red">*</span>Fooey Excerpt</label>
+                    <div class="field">
                     <textarea class="textarea @error('excerpt') is-danger @enderror"
                               name="excerpt"
                               id="excerpt"> {{old('excerpt')}} </textarea>
@@ -52,13 +52,12 @@
                         <p class="help is-danger">{{$errors->first('excerpt')}}</p>
                         @enderror
                     </div>
-
                 </div>
 
-                <div style="padding-top: 5%; padding-left: 1%">
-                    <label class="" for="body"><span style="color: red">*</span>Fooey Body</label>
+                <div style=" padding-left: 2%; padding-right: 2%; padding-top: 3%;">
+                    <label class="body" for="body"><span style="color: red">*</span>Fooey Body</label>
 
-                    <div style="padding-right: 50%">
+                    <div>
                     <textarea class="textarea @error('body') is-danger @enderror"
                               name="body"
                               id="body"> {{old('body')}} </textarea>
@@ -69,10 +68,10 @@
                     </div>
                 </div>
 
-                <div style="padding-left: 1%; padding-top: 5%">
-                    <label class="field" for=""><span style="color: red">*</span>Email</label>
+                <div style="padding-left: 2%; padding-right: 2%; padding-top: 3%">
+                    <label class="field" for="email"><span style="color: red">*</span>Email</label>
 
-                    <div style="padding-right: 50%">
+                    <div>
                         <input class="input @error('email') is-danger @enderror"
                                type="text"
                                name="email"
@@ -85,8 +84,8 @@
                     </div>
                 </div>
 
-                <div class="">
-                    <div style="padding-top: 5%; padding-left: 5%">
+                <div>
+                    <div style="padding-top: 3%;">
                         <button class="button" style="background-color: lightblue;" type="submit">Submit</button>
                     </div>
                 </div>
@@ -94,5 +93,5 @@
             </form>
         </div>
     </div>
-
+</div>
 
