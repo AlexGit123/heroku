@@ -1,6 +1,5 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
 
-
 @if (Route::has('login'))
     <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
         @auth
@@ -24,7 +23,6 @@
             <p> Password managers ensure that you don't use the same password more than once.</p>
 
             <p>You only have to remember one strong password instead of reusing or making unsafe passwords.</p>
-
 
             <p> Some password managers generate safe passwords for you to prevent hackers from easily obtaining your credentials</p>
         </div>
