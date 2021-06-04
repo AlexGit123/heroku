@@ -5,7 +5,8 @@
     <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
         @auth
             <a style="padding: 2%" href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Dashboard</a>
-            <a style="padding: 2%" href="{{ url('/password-management') }}" class="text-sm text-gray-700 underline">Password Management</a>
+            <a style="padding: 2%" href="{{ url('/password-management') }}" class="text-sm text-gray-700 underline">Password
+                Management</a>
 
         @else
             <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Log in</a>
@@ -22,10 +23,10 @@
     <h2 style="color: red; padding-left: 1%">Fields with an * are required</h2>
 
     <div style="text-align: center">
-        <form method="POST" action="/fooeys/{{$fooey->id}}">
+        <form method="POST" action="{{ route('fooeys.update', $fooey->id) }}">
             @csrf
             @method('PUT')
-            <div style="padding-left: 2%; padding-right: 2%; padding-top: 3%">
+            <div style="padding-left: 2%; padding-right: 2%; padding-top: 1%">
                 <label class="title" for="title"><span style="color: red">*</span>Fooey Title</label>
 
                 <div>
@@ -79,29 +80,18 @@
                 </div>
             </div>
 
-            <div style="display: flex; padding-top: 1%; justify-content: center">
-                <div style="text-align: center">
-                    <div>
-                        <a href="{{route('fooeys.update', $fooey)}}" class="button" style="background-color: lightblue">Save</a>
-                    </div>
-                </div>
+            <div style="display: inline-block; padding-top: .4%; justify-content: center">
+                <button type="submit" class="button is-medium" style="background-color: lightblue">Save</button>
+            </div>
 
-                <div style="text-align: center">
-                    <div>
-                        <a href="{{route('fooeys.index')}}" class="button"
-                           style="background-color: lightblue">Cancel</a>
-                    </div>
-                </div>
-
-                <form method="POST" action="/fooeys/{{ $fooey->id }}">
-                    @csrf
-                    @method('DELETE')
-                    <div style="text-align: center">
-                        <button class="button" style="background-color: lightblue;">Delete</button>
-                    </div>
-                </form>
+            <div style="display: inline-block">
+                <a href="{{route('fooeys.index')}}" class="button is-medium"
+                   style="background-color: lightblue">Cancel</a>
             </div>
 
         </form>
     </div>
+
+
+</div>
 </div>

@@ -5,7 +5,8 @@
         @auth
             <a style="padding: 2%" href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Dashboard</a>
             <a style="padding: 2%" href="{{ url('/') }}" class="text-sm text-gray-700 underline">Home</a>
-            <a style="padding: 2%" href="{{ url('/password-management') }}" class="text-sm text-gray-700 underline">Password Management</a>
+            <a style="padding: 2%" href="{{ url('/password-management') }}" class="text-sm text-gray-700 underline">Password
+                Management</a>
 
         @else
             <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Log in</a>
@@ -28,13 +29,23 @@
 
         <p>{{$fooey->email}}</p>
 
-       <a href="{{route('fooeys.edit', $fooey)}}"><button style="background-color: darkblue; color: white" class="button">Edit</button></a>
+        <a href="{{ route('fooeys.edit', $fooey) }}">
+            <button style="background-color: darkblue; color: white" class="button">Edit</button>
+        </a>
+        <form method="POST" action="/fooeys/{{ $fooey->id }}">
+            @csrf
+            @method('DELETE')
+            <div style="text-align: center">
+                <button class="button" style="background-color: red;">Delete</button>
+            </div>
+        </form>
     </div>
 @endforeach
 
 <div style="padding-top: 15%">
     <a href="{{route('fooeys.create')}}">
-        <button class="button is-large is-fullwidth" style="background-color: lightblue;" type="submit">Create a Fooey</button>
+        <button class="button is-large is-fullwidth" style="background-color: lightblue;" type="submit">Create a Fooey
+        </button>
     </a>
 </div>
 

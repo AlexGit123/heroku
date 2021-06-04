@@ -86,7 +86,6 @@ class FooeyController extends Controller
      */
     public function destroy(Fooey $fooey)
     {
-
         $fooey = Fooey::find($fooey->id);
 
         $fooey->delete();
@@ -94,12 +93,12 @@ class FooeyController extends Controller
         return redirect(route('fooeys.index', $fooey));
     }
 
-    public function validateFooey(Request $request)
+    public function validateFooey($request)
     {
         return $request->validate([
             'title' => 'required|max:50',
-            'excerpt' => 'required|min:50|max:200',
-            'body' => 'required|min:25|max:350',
+            'excerpt' => 'required|min:15|max:500',
+            'body' => 'required|min:25|max:2500',
             'email' => 'required|email'
         ]);
     }

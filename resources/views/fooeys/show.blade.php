@@ -13,24 +13,25 @@
     </div>
 @endif
 <div>
-    <div style="text-align: center; line-height: 3em; padding-left: 5%; padding-right: 5%; padding-bottom: 5%">
+    <div style="text-align: center; line-height: 3em; padding-left: 5%; padding-right: 5%; padding-bottom: 1%">
 
+        <h1 style="font-weight: bold; font-size: 120%">Title</h1>
         <a href="/fooeys/{{ $fooey->id }}">
             <h1>{{ $fooey->title }}</h1>
         </a>
 
         <div style="padding-top: 3%">
-            <h1 style="font-weight: bold">Title</h1>
+            <h1 style="font-weight: bold; font-size: 120%">Fooey Excerpt</h1>
             <p >{{ $fooey->excerpt }}</p>
         </div>
 
         <div style="padding-top: 3%">
-            <h1 style="font-weight: bold">Body</h1>
+            <h1 style="font-weight: bold; font-size: 120%">Fooey Body</h1>
             <p>{{ $fooey->body }}</p>
         </div>
 
         <div style="padding-top: 3%">
-            <h1 style="font-weight: bold">Email</h1>
+            <h1 style="font-weight: bold; font-size: 120%">Email</h1>
             <p>{{$fooey->email}}</p>
         </div>
 
