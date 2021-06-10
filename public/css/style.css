@@ -1,3 +1,33 @@
-.textAlign{
-    text-align: center;
+/* Fooey pages*/
+.input-field {
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 3%;
 }
+
+.padding-card {
+    padding-left: 10% !important;
+    padding-right: 10% !important;
+}
+
+/* Fooey.show*/
+.show-card-header {
+    font-weight: bold;
+    font-size: 120%
+}
+
+.show-padding {
+    padding: 3%;
+}
+
+.button-padding {
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+/* Navbar Paddings */
+.navbar-padding {
+    padding: 2%;
+}
+
+

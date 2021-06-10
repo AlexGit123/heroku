@@ -96,10 +96,11 @@ class FooeyController extends Controller
     public function validateFooey($request)
     {
         return $request->validate([
-            'title' => 'required|max:50',
+            'title' => 'required|min:10|max:50',
             'excerpt' => 'required|min:15|max:500',
             'body' => 'required|min:25|max:2500',
-            'email' => 'required|email'
+            'email' => 'required|email',
+            'link' => 'required|url'
         ]);
     }
 }
