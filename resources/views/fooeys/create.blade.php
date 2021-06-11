@@ -22,7 +22,7 @@
         <div>
             <h1 style="font-size: 110%; text-align: center">Create a new fooey</h1>
             <h2 style="color: red; padding-top: 2%; padding-left: 2%">* All fields are required</h2>
-            <div style="">
+            <div>
                 <form method="POST" action="/fooeys">
                     @csrf
                     <div style="padding-left: 2%; padding-right: 2%; padding-top: 1%">
@@ -32,13 +32,12 @@
                                    type="text"
                                    name="title"
                                    id="title"
-                                   value="{{old('title')}}">
+                                   value="{{ old('title') }}">
                             @error('title')
                             <p class="help is-danger">{{ $errors->first('title') }}</p>
                             @enderror
                         </div>
                     </div>
-
 
                     <div class="input-field">
                         <label class="excerpt" for="excerpt"><span style="color: red">*</span>Fooey Excerpt</label>
@@ -59,7 +58,7 @@
                                   name="body"
                                   id="body"> {{ old('body') }}</textarea>
                             @error('body')
-                            <p class="help is-danger">{{$errors->first('body')}}</p>
+                            <p class="help is-danger">{{ $errors->first('body') }}</p>
                             @enderror
                         </div>
                     </div>
@@ -71,7 +70,7 @@
                                    type="text"
                                    name="email"
                                    id="email"
-                                   value="{{old('email')}}"
+                                   value="{{ old('email') }}"
                                    placeholder="Ex. johndoe@gmail.com">
                             @error('email')
                             <p class="help is-danger">{{ $errors->first('email') }}</p>
