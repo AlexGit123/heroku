@@ -2,6 +2,15 @@
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Dashboard') }}
+            <div class="p-6 bg-white border-b border-gray-200">
+                <a href="/">Home</a>
+            </div>
+            <div class="p-6 bg-white border-b border-gray-200">
+                <a href="/password-management">Password Management</a>
+            </div>
+            <div class="p-6 bg-white border-b border-gray-200">
+                <a href="{{route('fooeys.index')}}">Fooeys</a>
+            </div>
         </h2>
     </x-slot>
 
@@ -18,10 +27,6 @@
 
                 <div class="p-6 bg-white border-b border-gray-200">
                     <a href="{{route('fooeys.index')}}">Create a Fooey!</a>
-                </div>
-
-                <div class="p-6 bg-white border-b border-gray-200">
-                    <a href="/password-management">The Importance of Password Management</a>
                 </div>
             </div>
         </div>

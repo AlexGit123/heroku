@@ -86,6 +86,8 @@ class FooeyController extends Controller
      */
     public function destroy(Fooey $fooey)
     {
+        $this->authorize('destroy');
+
         $fooey = Fooey::find($fooey->id);
 
         $fooey->delete();
