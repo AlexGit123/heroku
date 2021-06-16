@@ -25,20 +25,18 @@
             </h1>
             <p>{{ $fooey->email }}</p>
 
-
             <a href="{{ route('fooeys.edit', $fooey) }}">
                 <button style="background-color: darkblue; color: white" class="button">Edit</button>
             </a>
 
-
             @can('delete-fooey', $fooey)
-            <form method="POST" action="/fooeys/{{ $fooey->id }}">
-                @csrf
-                @method('DELETE')
-                <div style="text-align: center">
-                    <button class="button" style="background-color: red; color: white">Delete</button>
-                </div>
-            </form>
+                <form method="POST" action="/fooeys/{{ $fooey->id }}">
+                    @csrf
+                    @method('DELETE')
+                    <div style="text-align: center">
+                        <button class="button" style="background-color: red; color: white">Delete</button>
+                    </div>
+                </form>
             @endcan
         </div>
     @endforeach

@@ -68,6 +68,8 @@ class FooeyController extends Controller
      */
     public function edit(Fooey $fooey)
     {
+        $this->authorize('edit-own-fooey');
+
         return view('fooeys.edit', ['fooey' => $fooey]);
     }
 

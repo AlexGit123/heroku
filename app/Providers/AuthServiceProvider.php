@@ -49,5 +49,10 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('destroy', function (User $user){
             return ($user->admin == true);
         });
+
+        //Only users can edit their own post
+//        Gate::define('edit-own-fooey', function (User $user){
+//            return (($user->is($user)));
+//        });
     }
 }
