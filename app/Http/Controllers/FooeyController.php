@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Fooey;
+use App\Models\User;
 use Illuminate\Http\Request;
+use phpDocumentor\Reflection\Types\Nullable;
 
 class FooeyController extends Controller
 {
@@ -32,20 +34,25 @@ class FooeyController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request , User $user_id)
     {
+        $id = User::find($user_id);
         Fooey::create($this->validateFooey($request));
 
-        return redirect(route('fooeys.index'));
+        return redirect(route('fooeys.index', $id));
+
+
+
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Fooey  $fooey
+     * @param \App\Models\Fooey $fooey
      * @return \Illuminate\Http\Response
      */
     public function show(Fooey $fooey)
@@ -56,7 +63,7 @@ class FooeyController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Fooey  $fooey
+     * @param \App\Models\Fooey $fooey
      * @return \Illuminate\Http\Response
      */
     public function edit(Fooey $fooey)
@@ -67,8 +74,8 @@ class FooeyController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Fooey  $fooey
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Fooey $fooey
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Fooey $fooey)
@@ -81,7 +88,7 @@ class FooeyController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Fooey  $fooey
+     * @param \App\Models\Fooey $fooey
      * @return \Illuminate\Http\Response
      */
     public function destroy(Fooey $fooey)
@@ -98,6 +105,7 @@ class FooeyController extends Controller
     public function validateFooey($request)
     {
         return $request->validate([
+            'user_id' => 'nullable | integer',
             'title' => 'required|min:10|max:50',
             'excerpt' => 'required|min:15|max:500',
             'body' => 'required|min:25|max:2500',

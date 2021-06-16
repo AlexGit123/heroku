@@ -15,12 +15,21 @@ class CreateFooeysTable extends Migration
     {
         Schema::create('fooeys', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->string('title');
             $table->text('excerpt');
             $table->text('body');
             $table->text('email');
             $table->text('link');
             $table->timestamps();
+
+
+
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
         });
     }
 

@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Fooey;
 use App\Models\User;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
@@ -25,8 +26,28 @@ class AuthServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerPolicies();
-        Gate::define('update', function (User $user){
-            return ($user->email == 'admin@admin.nl');
+        //Checks if user is admin or user
+        Gate::define('is_admin', function($user){
+            return $user->admin  == true;
+        });
+
+        Gate::define('is_user', function(User $user){
+            return $user->admin == false;
+        });
+
+        //Only admin is able to delete a post
+        Gate::define('delete-fooey', function (User $user){
+            return ($user->admin == true);
+        });
+
+        //defines which user has admin access
+        Gate::define('admin-access', function (User $user){
+            return ($user->admin == 1);
+        });
+
+        //Authorized delete only for admin
+        Gate::define('destroy', function (User $user){
+            return ($user->admin == true);
         });
     }
 }
