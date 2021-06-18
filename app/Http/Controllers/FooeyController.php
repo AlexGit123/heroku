@@ -37,16 +37,11 @@ class FooeyController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request , User $user_id)
+    public function store(Request $request)
     {
-        $id = User::find($user_id);
         Fooey::create($this->validateFooey($request));
 
-        return redirect(route('fooeys.index', $id));
-
-
-
-
+        return redirect(route('fooeys.index'));
     }
 
     /**
@@ -68,8 +63,6 @@ class FooeyController extends Controller
      */
     public function edit(Fooey $fooey)
     {
-        $this->authorize('edit-own-fooey');
-
         return view('fooeys.edit', ['fooey' => $fooey]);
     }
 

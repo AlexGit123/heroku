@@ -10,6 +10,8 @@
     <link href="{{ asset('https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css') }}" rel="stylesheet">
 </head>
 <body>
+@include('common.navbar')
+
 @yield('content')
 </body>
 </html>

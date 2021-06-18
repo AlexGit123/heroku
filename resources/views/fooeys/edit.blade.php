@@ -1,22 +1,6 @@
 @extends('common.master')
 
 @section('content')
-    @if (Route::has('login'))
-        <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-            @auth
-                <a href="{{ url('/') }}" class="text-sm text-gray-700 underline navbar-padding">Home</a>
-                <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline navbar-padding">Dashboard</a>
-                <a href="{{ url('/password-management') }}" class="text-sm text-gray-700 underline navbar-padding">Password
-                    Management</a>
-            @else
-                <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Log in</a>
-                @if (Route::has('register'))
-                    <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
-                @endif
-            @endauth
-        </div>
-    @endif
-
     <div>
         <h1 style="text-align: center">Update a Fooey</h1>
         <h2 style="color: red; padding-left: 2%">* All fields are required</h2>

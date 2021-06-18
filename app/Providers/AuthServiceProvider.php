@@ -50,7 +50,7 @@ class AuthServiceProvider extends ServiceProvider
             return ($user->admin == true);
         });
 
-        //Only users can edit their own post
+        //Only an admin can access the admin panel
 //        Gate::define('edit-own-fooey', function (User $user){
 //            return (($user->is($user)));
 //        });
