@@ -49,10 +49,5 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('destroy', function (User $user){
             return ($user->admin == true);
         });
-
-        //Only an admin can access the admin panel
-//        Gate::define('edit-own-fooey', function (User $user){
-//            return (($user->is($user)));
-//        });
     }
 }
