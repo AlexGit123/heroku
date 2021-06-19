@@ -1,3 +1,10 @@
+## Security Assignment3
+Hosted app: https://heroku-hzprojects.herokuapp.com/ 
+
+To prevent snooping and session hijacking, the web application is secure with HTTPS and has a session time-out set at 25 minutes, as well as, secure_session_cookie set to true (both defined in Heroku) as additional protection against attackers.  
+
+To prevent IDOR through access control, only users that are registered can access additional routes on the website which are are not visible in the navbar otherwise. Additionally, only users with the admin role are allowed to delete post on the "Fooey" page. 
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
