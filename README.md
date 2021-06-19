@@ -1,7 +1,7 @@
 ## Security Assignment3
 Hosted app: https://heroku-hzprojects.herokuapp.com/ 
 
-To prevent snooping and session hijackin, the web application is secure with HTTPS and has a session time-out set at 25 minutes, as well as, secure_session_cookie set to true (both defined in Heroku) as additional protection against attackers.  
+To prevent snooping and session hijacking, the web application is secure with HTTPS and has a session time-out set at 25 minutes, as well as, secure_session_cookie set to true (both defined in Heroku) as additional protection against attackers.  
 
 To prevent IDOR through access control, only users that are registered can access additional routes on the website. Additionally, only users with the admin role are allowed to delete post on the "Fooey" page. 
 
